@@ -5,7 +5,8 @@
 </div>
 
 
-### [Project page](https://www.sysu-hcp.net/projects/cv/127.html) |[Paper](https://arxiv.org/abs/2401.14828) |[Initial 3D-GS](https://drive.google.com/drive/folders/1DWcMyx5ab7PW3QkCwtJmkKUBL_feQxNW?usp=sharing) | [Edited 3D-GS](https://drive.google.com/drive/folders/1DWcMyx5ab7PW3QkCwtJmkKUBL_feQxNW?usp=drive_link) 
+### [Project page](https://zjy526223908.github.io/TIP-Editor/) |[Paper](https://arxiv.org/abs/2401.14828) |[Initial 3D-GS](https://drive.google.com/drive/folders/1DWcMyx5ab7PW3QkCwtJmkKUBL_feQxNW?usp=sharing) | [Edited 3D-GS](https://drive.google.com/drive/folders/1DWcMyx5ab7PW3QkCwtJmkKUBL_feQxNW?usp=drive_link) 
+
 
 
 ## Todo 
@@ -85,7 +86,6 @@ scale and drag it to the desired position, and save it in .ply format.
     bash run_doll_sunglasses1.sh
 ```
 
-| 
 
 ## Testing
 Download [Edited 3D-GS](https://drive.google.com/drive/folders/1DWcMyx5ab7PW3QkCwtJmkKUBL_feQxNW?usp=drive_link)  and unzip in res file
