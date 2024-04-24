@@ -5,7 +5,7 @@
 </div>
 
 
-### [Project page](https://zjy526223908.github.io/TIP-Editor/) |[Paper](https://arxiv.org/abs/2401.14828) |[Initial 3D-GS](https://drive.google.com/drive/folders/1DWcMyx5ab7PW3QkCwtJmkKUBL_feQxNW?usp=sharing) | [Edited 3D-GS](https://drive.google.com/drive/folders/1DWcMyx5ab7PW3QkCwtJmkKUBL_feQxNW?usp=drive_link) 
+### [Project page](https://zjy526223908.github.io/TIP-Editor/) |[Paper](https://arxiv.org/abs/2401.14828) |[Initial 3D-GS](https://drive.google.com/drive/folders/1DWcMyx5ab7PW3QkCwtJmkKUBL_feQxNW?usp=sharing) | [Edited 3D-GS](https://drive.google.com/drive/folders/1Tv2bwfznzqEMX3qOBrWeIQWYR0kg0JA7?usp=drive_link) 
 
 
 
@@ -24,9 +24,13 @@ Install with pip:
     pip install huggingface_hub==0.16.4
     pip install open3d==0.17.0 trimesh==3.22.5 pymeshlab
     
-    git clone https://github.com/graphdeco-inria/diff-gaussian-rasterization.git
-    cd diff-gaussian-rasterization
-    python setup.py
+    # install gaussian rasterization
+    git clone --recursive https://github.com/ashawkey/diff-gaussian-rasterization
+    pip install ./diff-gaussian-rasterization
+    
+    # install simple-knn
+    git clone https://github.com/camenduru/simple-knn.git
+    pip install ./simple-knn
 ```
 
 
