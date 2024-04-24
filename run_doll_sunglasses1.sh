@@ -21,7 +21,7 @@ python train_3DGS.py --fp16 --workspace ./res_gaussion/colmap_doll  \
 # run stepwise personalization
 # 1. scene personalization
 
-export MODEL_NAME="/apdcephfs_cq11/share_1467498/home/zhuangjingyu/model_zoo/models--stabilityai--stable-diffusion-2-1-base/snapshots/5ede9e4bf3e3fd1cb0ef2f7a3fff13ee514fdf06"
+export MODEL_NAME="stabilityai/stable-diffusion-2-1-base"
 export OUTPUT_DIR="./res_gaussion/colmap_doll/scene_personalization"
 export image_root=./res_gaussion/colmap_doll/sample_views/rgb
 python personalization/scene_personalization.py \
