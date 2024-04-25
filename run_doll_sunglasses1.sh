@@ -42,8 +42,8 @@ python personalization/scene_personalization.py \
   --max_train_steps=1000
 
 # 2. novel content personalization
-export MODEL_NAME="./res_gaussion/colmap_doll/scene_personalization/checkpoint-2000"
-export OUTPUT_DIR="./res_gaussion/colmap_doll/content_personalization-2000"
+export MODEL_NAME="./res_gaussion/colmap_doll/scene_personalization/checkpoint-1000"
+export OUTPUT_DIR="./res_gaussion/colmap_doll/content_personalization"
 
 python personalization/content_personalization.py \
 --pretrained_model_name_or_path $MODEL_NAME  \
