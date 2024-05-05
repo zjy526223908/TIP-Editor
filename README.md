@@ -69,6 +69,7 @@ Make sure the Y-axis is vertical and upward to the ground, and the object is ori
 
 ## Training 
 Download [Initial 3D-GS](https://drive.google.com/drive/folders/1DWcMyx5ab7PW3QkCwtJmkKUBL_feQxNW?usp=sharing)
+Download editing scene images in the paper from [Data](https://drive.google.com/drive/folders/1sHCyZ9E0Y5L5Qfjdh_Oo7FCT9evJmrXj?usp=drive_link)
 
 ### How to set 3D bounding box?
 
@@ -83,8 +84,6 @@ scale and drag it to the desired position, and save it in .ply format.
     <img src="demo/3dbox.png" width="1024">
 </div>
 
-Download editing scene images in the paper from [Data](https://drive.google.com/drive/folders/1sHCyZ9E0Y5L5Qfjdh_Oo7FCT9evJmrXj?usp=drive_link
-)
 
 
 
