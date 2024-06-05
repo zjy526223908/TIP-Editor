@@ -68,9 +68,14 @@ Make sure the Y-axis is vertical and upward to the ground, and the object is ori
 </div>
 
 ## Training 
+We provided some intermediate results:
+
+Download editing scene data in the paper from [Data](https://drive.google.com/drive/folders/1sHCyZ9E0Y5L5Qfjdh_Oo7FCT9evJmrXj?usp=drive_link)
+
 Download [Initial 3D-GS](https://drive.google.com/drive/folders/1DWcMyx5ab7PW3QkCwtJmkKUBL_feQxNW?usp=sharing)
 
-Download editing scene images in the paper from [Data](https://drive.google.com/drive/folders/1sHCyZ9E0Y5L5Qfjdh_Oo7FCT9evJmrXj?usp=drive_link)
+Download [Finetuned SD models](https://pan.baidu.com/s/1M77AVAiS3aCsxMUq0-Nd4A) from baidunetdisk, password 8888
+
 
 ### How to set 3D bounding box?
 

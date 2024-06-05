@@ -399,7 +399,7 @@ class Trainer_Refinement(object):
     def update_dataset(self, t):
 
         print('update dataset with t :{}'.format(t))
-        test_loader = SampleViewsDataset(self.opt, device=self.device, type='test').dataloader()
+        test_loader = SampleViewsDataset(self.opt,R_path=self.opt.R_path, device=self.device, type='test').dataloader()
 
         save_path = os.path.join(self.workspace, 'refine_views')
         mask_path = os.path.join(self.workspace, 'mask')
@@ -458,7 +458,7 @@ class Trainer_Refinement(object):
                 blend_img = Image.fromarray(blend_img.astype(np.uint8))
                 blend_img.save(os.path.join(save_path, out_name))
 
-        train_loader = RandomRGBSampleViewsDataset(self.opt, save_path, device=self.device, type='test').dataloader()
+        train_loader = RandomRGBSampleViewsDataset(self.opt, save_path, R_path=self.opt.R_path, device=self.device, type='test').dataloader()
 
         return train_loader
 
@@ -521,7 +521,7 @@ class Trainer_Refinement(object):
         with torch.no_grad():
 
             for i, data in enumerate(loader):
-                preds, preds_depth, dir = self.test_step(data, self.model, if_gui=if_gui)
+                preds, preds_depth, dir = self.test_step(data, self.model)
 
                 pred = preds[0].detach().cpu().numpy()
                 pred = (pred * 255).astype(np.uint8)
@@ -531,10 +531,10 @@ class Trainer_Refinement(object):
 
                 if write_video:
                     all_preds.append(pred)
-
-                    cv2.imwrite(os.path.join(save_path, f'{i:03d}.png'),
-                                cv2.cvtColor(pred, cv2.COLOR_RGB2BGR))
-                    cv2.imwrite(os.path.join(save_path, f'{name}_{i:04d}_depth.png'), pred_depth)
+                    all_preds_depth.append(pred_depth)
+                    # cv2.imwrite(os.path.join(save_path, f'{i:03d}.png'),
+                    #             cv2.cvtColor(pred, cv2.COLOR_RGB2BGR))
+                    # cv2.imwrite(os.path.join(save_path, f'{name}_{i:04d}_depth.png'), pred_depth)
 
                 pbar.update(loader.batch_size)
 

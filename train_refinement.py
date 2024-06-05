@@ -66,6 +66,8 @@ if __name__ == '__main__':
     ### dataset options
     parser.add_argument("--pose_sample_strategy", type=str, default='uniform',
                         help='input data directory')
+    parser.add_argument("--R_path", type=str, default=None,
+                        help='input data directory')
     parser.add_argument('--batch_size', type=int, default=1, help="GUI width")
     parser.add_argument('--num_work', type=int, default=4, help="GUI width")
     parser.add_argument('--radius_range', type=float, nargs='*', default=[1.4, 1.6],
@@ -91,12 +93,12 @@ if __name__ == '__main__':
     if opt.test:
         guidance = None  # no need to load guidance model at test
 
-        trainer = Trainer_Refinement('df', opt, GSNetwork(opt, device), GSNetwork(opt, device), device=device,
+        trainer = Trainer_Refinement('df', opt, GSNetwork(opt, device), GSNetwork(opt, device), guidance, device=device,
                                      workspace=opt.workspace,
                                      fp16=opt.fp16, use_checkpoint=opt.ckpt)
 
         if opt.save_vedio:
-            test_loader = SphericalSamplingDataset(opt, device=device, type='test', H=opt.H, W=opt.W, size=50).dataloader()
+            test_loader = SphericalSamplingDataset(opt, device=device, R_path=opt.R_path, type='test', H=512, W=512, size=250).dataloader()
             trainer.test(test_loader)
 
     else:
@@ -108,7 +110,7 @@ if __name__ == '__main__':
                                      device=device, workspace=opt.workspace,
                                      fp16=opt.fp16, use_checkpoint=opt.ckpt, eval_interval=opt.eval_interval)
 
-        valid_loader = SphericalSamplingDataset(opt, device=device, type='test', size=120).dataloader()
+        valid_loader = SphericalSamplingDataset(opt, device=device, type='test', R_path=opt.R_path, size=120).dataloader()
 
         max_epoch = np.ceil(opt.iters / (len(opt.radius_list) * len(opt.theta_list) * len(opt.phi_list))).astype(np.int32)
         print('max_epoch : {}'.format(max_epoch))
