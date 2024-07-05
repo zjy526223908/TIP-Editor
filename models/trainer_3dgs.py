@@ -381,6 +381,11 @@ class Trainer_3DGS(object):
         pymesh = ms.current_mesh()
         xyz = pymesh.vertex_matrix()
 
+        mean = xyz.mean(axis=0)
+        xyz = xyz - mean
+        xyz *= 1.0
+        xyz = xyz + mean
+
         from models.sh_utils import SH2RGB
         from models.network_3dgaussain import BasicPointCloud
         from PIL import Image

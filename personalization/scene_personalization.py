@@ -755,7 +755,7 @@ class DreamBoothDataset(Dataset):
 
     def __getitem__(self, index):
 
-        loss_idx = random.choices([0, 1], weights=[3, 1])[0]
+        loss_idx = random.choices([0, 1], weights=[1, 1])[0]
 
         example = {}
         example['loss_idx'] = loss_idx
