@@ -383,7 +383,7 @@ class Trainer_3DGS(object):
 
         mean = xyz.mean(axis=0)
         xyz = xyz - mean
-        xyz *= 1.0
+        xyz *= self.opt.bounding_box_scale
         xyz = xyz + mean
 
         from models.sh_utils import SH2RGB
